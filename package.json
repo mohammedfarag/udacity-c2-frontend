@@ -5,8 +5,9 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --port 8100",
+    "clean": "rimraf www/ || true",
+    "build": "npm run clean && ng build --prod && cd www && zip -r Archive.zip . && cd ..",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
